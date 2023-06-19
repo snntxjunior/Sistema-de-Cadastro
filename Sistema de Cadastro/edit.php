@@ -22,10 +22,10 @@
             <div class="row">
                 <div class="col-md-5 mx-auto">
                     <?php
-                        require_once 'model.php';
+                        require_once 'Model.php';
                         $model = new Model();
                         $id = $_REQUEST['id'];
-                        $insert = $model->edit($id);
+                        $row = $model->edit($id);
 
                         if (isset($_POST['update'])) {
                             if (isset($_POST['name']) && (isset($_POST['email'])) && (isset($_POST['whats'])) && (isset($_POST['address']))){
@@ -62,7 +62,7 @@
                         </div>
                         <div class="form-group">
                             <label for="nome">Whatsapp</label>
-                            <input type="number" name="whats" value="<?php echo $row['whatsapp']; ?>" class="form-control" required>
+                            <input type="tel" name="whats" value="<?php echo $row['whatsapp']; ?>" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label for="nome">Endereço</label>
